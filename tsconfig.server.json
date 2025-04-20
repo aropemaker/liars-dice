@@ -1,11 +1,17 @@
 {
-  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "module": "commonjs",
-    "outDir": "dist",
-    "target": "es2017",
-    "isolatedModules": false,
-    "noEmit": false
+    "target": "es2020", 
+    "module": "ESNext",        // Use ESNext for module support
+    "moduleResolution": "node", // Recommended module resolution for Node.js
+    "outDir": "dist", 
+    "esModuleInterop": true,   
+    "strict": true, 
+    "skipLibCheck": true,
+    "types": ["@cloudflare/workers-types"],
+    "allowJs": true,  // Allows JavaScript files to be compiled (if you want to support JS files as well)
+    "resolveJsonModule": true, // Allows importing JSON files as modules
+    "isolatedModules": true,  // Helps ensure the modules are handled correctly in TypeScript
+    "lib": ["ES2020"] // Defines the library files to include in the compilation, ensuring ESNext features are supported
   },
-  "include": ["server.ts"]
+  "include": ["./**/*.ts"]
 }
